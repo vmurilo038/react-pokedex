@@ -1,0 +1,193 @@
+main {
+  min-height: 100vh;
+  padding: 40px 20px 60px;
+  overflow: hidden;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: headerEntrada 0.8s ease;
+}
+
+header h1 {
+  color: white;
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+header p {
+  color: white;
+  font-size: 16px;
+}
+
+.pokedex-logo {
+  width: 400px;
+  max-width: 80%;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.pokemon-container {
+  max-width: 1150px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.pokemon-card {
+  height: 190px;
+  padding: 20px;
+  background: #70c957;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: cardEntrada 0.7s ease backwards;
+}
+
+.pokemon-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.pokemon-card:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.pokemon-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.pokemon-card:nth-child(4) {
+  animation-delay: 0.25s;
+}
+
+.pokemon-card:nth-child(5) {
+  animation-delay: 0.3s;
+}
+
+.pokemon-card:nth-child(6) {
+  animation-delay: 0.35s;
+}
+
+.pokemon-card:nth-child(7) {
+  animation-delay: 0.4s;
+}
+
+.pokemon-card:nth-child(8) {
+  animation-delay: 0.45s;
+}
+
+.pokemon-card:nth-child(9) {
+  animation-delay: 0.5s;
+}
+
+.pokemon-card:nth-child(10) {
+  animation-delay: 0.55s;
+}
+
+.pokemon-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.pokemon-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.numero {
+  color: #555;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.pokemon-info h2 {
+  margin: 8px 0;
+  color: #111;
+  font-size: 22px;
+  text-transform: capitalize;
+}
+
+.pokemon-info p {
+  margin: 2px 0;
+  color: #222;
+  font-size: 13px;
+  text-transform: capitalize;
+}
+
+.pokemon-info button {
+  margin-top: 12px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  background: #f5df45;
+  color: #222;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.pokemon-info button:hover {
+  transform: scale(1.08);
+  background: #ffe95c;
+}
+
+.pokemon-image {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  animation: pokemonFlutuando 3s ease-in-out infinite;
+}
+
+@keyframes pokemonFlutuando {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes cardEntrada {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes headerEntrada {
+  from {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .pokemon-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .pokemon-container {
+    grid-template-columns: 1fr;
+  }
+}
